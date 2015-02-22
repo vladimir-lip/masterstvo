@@ -1,0 +1,20 @@
+<h2>Добавить организатора</h2>
+<%= form_for @org do |f| %>
+        
+  <%= label_tag(:last_name, "Фамилия") %>
+  <%= f.text_field :last_name %>
+  <br/>  
+  <%= label_tag(:first_name, "Имя") %>
+  <%= f.text_field :first_name %>
+  <br/>
+  <%= label_tag(:email, "Email") %>
+  <%= f.email_field :email %>
+  <br/>
+  <%= label_tag(:tel_1, "Телефон 1") %>
+  <%= f.telephone_field :tel_1 %>
+  <br/>
+  <%= label_tag(:tel_2, "Телефон 2") %>
+  <%= f.telephone_field :tel_2 %>
+
+  <p><%= f.submit "Добавить организатора" %>
+<% end %>

@@ -1,0 +1,34 @@
+<h1>Cписок Организаторов</h1>
+
+<% if @orgs.empty? %>
+   <b>Организаторов нет в базе</b><br/>
+   <%= link_to "Добавить нового организатора", new_organizer_path %>  
+<% else %>
+<table>
+  <tr>
+    <th>id</th>
+    <th>Фамилия</th>
+    <th>Имя</th>
+    <th>Почта</th>
+    <th>Телефон 1</th>
+    <th>Телефон 2</th>
+    <th>Ред.</th>
+    <th>Удал.</th>
+  </tr>   
+  
+  <% @orgs.each do |i| %>
+          
+    <tr>        
+       <td><%= link_to i.id %></td>
+       <td><%= link_to i.last_name %></td>
+       <td><%= link_to i.first_name %></td>
+       <td><%= link_to i.email %></td>
+       <td><%= link_to i.tel_1 %></td>
+       <td><%= link_to i.tel_2 %></td>
+       <td><%= link_to "Ред.",edit_organizer_path(i.id) %></td>
+       <td><%= link_to "Удал.", i, method: :delete, data: { confirm: "Точно удалить Организатора?"} %></td>
+    </tr>    
+  <% end %>
+</table>
+
+<% end %>

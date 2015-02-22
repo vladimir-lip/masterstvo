@@ -1,0 +1,5 @@
+<h1>Список видов мероприятий</h1>
+
+<% @type_works.each do |i| %>
+  <%= link_to i.title, type_work_path(i) %><br/>
+<% end %>
